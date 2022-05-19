@@ -1,0 +1,7 @@
+<!--pages/home-vedio/index.wxml-->
+<view class="video">
+  <view class="item" wx:for="{{topMv}}" wx:key="id" >
+    <video-item-v1 item="{{item}}" bindtap="handleVideoItemClick" data-item="{{item}}"></video-item-v1>
+  </view>
+  <view wx:if="{{!hasMore}}" class="noMore">暂无更多</view>
+</view>

@@ -1,7 +1,50 @@
 {
-  "projectname": "%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+  "projectname": "miniProgram",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": false
   },
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "detail-video",
+          "pathName": "pages/detail-video/index",
+          "query": "id=14527441",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "detail-songs",
+          "pathName": "pages/detail-songs/index",
+          "query": "ranking=hotRanking&type=rank",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "detail-menu",
+          "pathName": "pages/detail-songs/index",
+          "query": "id=893975447&type=menu",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "search-detail",
+          "pathName": "pages/detail-search/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "play",
+          "pathName": "pages/music-player/index",
+          "query": "id=488249475",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "2.24.2"
 }

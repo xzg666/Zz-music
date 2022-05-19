@@ -1,0 +1,21 @@
+/**index.wxss**/
+page{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.van-search__content{
+  background-color: #fff !important;
+}
+.van-search {
+  padding: 10px 0 !important;
+}
+.swiper{
+  border-radius: 10rpx;
+  overflow: hidden;
+  /* 解决有的机型设置不生效bug */
+  transform: translate(0);
+}
+.image{
+  width: 100%;
+  
+}

@@ -1,0 +1,24 @@
+{
+  "name": "miniProgram",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xzg666/Zz-music.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xzg666/Zz-music/issues"
+  },
+  "homepage": "https://github.com/xzg666/Zz-music#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.3",
+    "hy-event-store": "^1.2.1"
+  }
+}

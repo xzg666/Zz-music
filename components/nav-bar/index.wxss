@@ -1,0 +1,35 @@
+/* components/nav-bar/index.wxss */
+page{
+  color:#fff
+}
+.nav-bar{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0 10rpx;
+}
+.left,.right{
+  width: 80rpx;
+}
+.left-arrow .icon{
+  
+  width: 45rpx;
+  height: 45rpx;
+}
+ .left .left-arrow{
+  display: none;
+  height: 44rpx;
+}
+.left-slot:empty + .left-arrow{
+  display: block !important;
+}
+.center-slot:empty + .center-title{
+  display: block !important;
+}
+.center-title{
+  display: none;
+}
+
+.center{
+  flex: 1;
+}

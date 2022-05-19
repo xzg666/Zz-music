@@ -1,0 +1,114 @@
+/* components/song-detail-header/index.wxss */
+/* .page{
+  padding-top: 550rpx;
+} */
+.song-detail-header{
+  width: 100vw;
+  height: 400rpx;
+  position: relative;
+  left: -30rpx;
+  padding: 50rpx 45rpx;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 24rpx;
+  
+
+}
+.bg-cover {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  backdrop-filter: blur(5px);
+}
+.image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  
+}
+.top{
+  display: flex;
+  width: 90%;
+}
+.themePic{
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+}
+.title{
+  font-size: 32rpx;
+   /* 显示2行 */
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   display: -moz-box;
+   -moz-line-clamp: 2;
+   -moz-box-orient: vertical;
+   word-wrap: break-word;
+   word-break: break-all;
+   white-space: normal;
+   overflow: hidden;
+}
+.info{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40rpx;
+  
+}
+.author{
+  display: flex;
+}
+.avatar{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  /* margin-top: 10rpx; */
+}
+.nickname{
+  font-size: 24rpx;
+  margin-left: 18rpx;
+  margin-top: 12rpx;
+}
+.prod{
+  /* 显示1行 */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 1;
+  -moz-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+.bottom{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 35rpx;
+  padding-left: -40rpx;
+  font-size: 28rpx;
+}
+.icon{
+  width: 48rpx;
+}
+.favor{
+  margin-left: -80rpx;
+}
+.bottom .item{
+  display: flex;
+  align-items: center;
+}

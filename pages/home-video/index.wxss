@@ -1,0 +1,11 @@
+/* pages/home-vedio/index.wxss */
+.video{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.item{width: 48%;}
+.noMore{
+  color:gray;
+  font-size:30rpx;
+}

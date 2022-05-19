@@ -1,0 +1,68 @@
+<!--pages/music-player/index.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+
+<!-- 1.背景 -->
+<image class="bg-img" src="{{songsInfo.al.picUrl}}" mode="aspectFill"></image>
+<view class="bg-cover"></view>
+
+<!-- 2.导航 -->
+<nav-bar bind:click="handleBackClick">
+  <view slot="title" class="tab">
+    <view class="{{currentPage === 0 ? 'active' : ''}}">歌曲</view>
+    <view class="diveder">|</view>
+    <view class="{{currentPage === 1 ? 'active' : ''}}">歌词</view>
+  </view>
+</nav-bar>
+
+<!-- 3.内容 -->
+<swiper 
+  class="content" 
+  style="height:{{contentHeight}}px;" 
+  bindchange="handleSwiperChange"
+>
+  <swiper-item class="music">
+    <view class="album">
+      <image class="image" mode="widthFix" src="{{songsInfo.al.picUrl}}"></image>
+    </view>
+    <view class="info">
+      <view class="name">{{songsInfo.name}}</view>
+      <view class="arname">{{songsInfo.ar[0].name}}</view>
+      <view class="alia">专辑：{{songsInfo.alia[0]||'暂无~'}}</view>
+    </view>
+    <view class="lyric" wx:if="{{deviceRadio >2}}">{{currentLyric}}</view>
+    <view class="progress">
+      <slider 
+        class="slider" 
+        block-size="{{12}}" 
+        value="{{sliderValue}}" 
+        bindchange="handleSliderChange"
+        bindchanging="handleSliderChanging"  
+      ></slider>
+      <view class="time">
+        <view class="start-time">{{format.formatDuration(currentTime)}}</view>
+        <view class="end-time">{{format.formatDuration(songsInfo.dt)}}</view>
+      </view>
+    </view>
+    <view class="operation">
+      <image class="btn btn-mode" 
+             src="/assets/images/player/play_order.png"></image>
+      <image class="btn btn-prev" 
+             src="/assets/images/player/play_prev.png"></image>
+      <image class="btn btn-pause" 
+             src="/assets/images/player/play_pause.png"></image>
+      <image class="btn btn-next" 
+             src="/assets/images/player/play_next.png"></image>
+      <image class="btn btn-music" src="/assets/images/player/play_music.png"></image>
+    </view>
+  </swiper-item>
+  <swiper-item class="lyric">
+    <scroll-view scroll-y class="lyric-list" scroll-top="{{lyricScrollTop}}" scroll-with-animation>
+      <block wx:for="{{lyricInfos}}" wx:key="index">
+        <view class="item {{currentLyricIndex === index?'active':''}}"
+        style="padding-top: {{index === 0 ? (contentHeight/2-80): 0}}px;padding-bottom: {{index === lyricInfos.length - 1 ? (contentHeight/2+80): 0}}px;"
+        >{{item.text}}</view>
+
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,44 @@
+/* components/song-item-v2/index.wxss */
+page{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.song-item-v2{
+  width: 100%;
+  display: flex;
+  font-size: 30rpx;
+  align-items: center;
+  margin-bottom: 35rpx;
+  padding: 15rpx 10rpx;
+}
+.detail{
+  margin-left: 30rpx;
+}
+.icon{
+  width: 38rpx;
+  height: 22rpx;
+  margin: 5rpx 5rpx 0 0;
+}
+.content{
+  display: flex;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 25rpx;
+}
+.dot{
+  margin: -8rpx 10rpx 0 10rpx;
+}
+.aname,.album{
+  /* 显示1行 */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 1;
+  -moz-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}

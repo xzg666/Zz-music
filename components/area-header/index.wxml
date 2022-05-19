@@ -1,0 +1,10 @@
+<view class="area-header">
+  <view class="title">{{title}}</view>
+  <view class="right" bindtap="handleRightClick">
+    <view class="slot"><slot></slot></view>
+    <view class="default" wx:if="{{showRight}}">
+      <view>{{rightText}}</view>
+      <image class="icon" src="/assets/images/icons/arrow-right.png"></image>
+    </view>
+  </view>
+</view>

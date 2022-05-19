@@ -1,0 +1,18 @@
+<!--components/nav-bar/index.wxml-->
+
+<!-- 状态栏高度占位 -->
+<view style="height: {{statusBarHeight}}px;"></view>
+<view class="nav-bar" style="height: {{navBarHeight}}px;">
+  <view class="left" bindtap="handleLeftClick">
+    <view class="left-slot"><slot name="left"></slot></view>
+    <view class="left-arrow">
+      <image class="icon" mode="widthFix" src="/assets/images/icons/arrow-left.png"></image>
+    </view>
+    
+  </view>
+  <view class="center">
+    <view class="center-slot"><slot name="title"></slot></view>
+    <view class="center-title">{{title}}</view>
+  </view>
+  <view class="right"><slot name="right"></slot></view>
+</view>
