@@ -14,6 +14,7 @@
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black"
     },
+    "requiredBackgroundModes":["audio"],
     "tabBar": {
       "list": [{
         "pagePath": "pages/home-music/index",

@@ -2,10 +2,10 @@ import {getBanners,getSongMenu} from '../../service/api_music.js'
 import queryRect from '../../utils/query-rect'
 import throttle from '../../utils/throttle'
 
-import { rankingStore,rankingMap} from '../../store/index.js'
+import { rankingStore,rankingMap, playStore} from '../../store/index.js'
 
 
-const throttleQueryRect = throttle(queryRect)
+const throttleQueryRect = throttle(queryRect,500,{trailing:true})
 
 Page({
   data: {
@@ -14,7 +14,9 @@ Page({
     recommendSongs:[],
     hotSongMenu:[],
     recommendSongMenu: [],
-    rankings: { 0: {}, 2: {}, 3: {} }
+    rankings: { 0: {}, 2: {}, 3: {} },
+    songsInfo:{},
+    isPlaying:false
   },
   onLoad(options) {
     //获取数据
@@ -34,6 +36,10 @@ Page({
     rankingStore.onState("newRanking", this.getRankingHandler(0))
     rankingStore.onState("originRanking", this.getRankingHandler(2))
     rankingStore.onState("upRanking", this.getRankingHandler(3))
+    playStore.onStates(["songsInfo","isPlaying"], ({songsInfo,isPlaying})=>{
+      if(songsInfo !== undefined){this.setData({songsInfo})}
+      if(isPlaying !== undefined){this.setData({isPlaying})}
+    })
   },
   getPageData(){
     getBanners().then(res=>{
@@ -87,5 +93,20 @@ Page({
    const idx = event.currentTarget.dataset.idx
    const name = rankingMap[idx]
    this.navigateToDetailSongsPage(name)
+  },
+  handleSongItemClick(event){
+    const index = event.currentTarget.dataset.index
+    playStore.setState('playListSongs',this.data.recommendSongs)
+    playStore.setState('playListIndex',index)
+  },
+  //点击playBar的播放和暂停
+  handlePlayBtnClick(){
+    playStore.dispatch("changeMusicStatusAction",!this.data.isPlaying)
+  },
+  handlePlayBarClick(){
+    console.log(1)
+    wx.navigateTo({
+      url: '/pages/music-player/index?id='+this.data.songsInfo.id,
+    })
   }
 })

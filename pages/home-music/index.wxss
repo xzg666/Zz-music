@@ -1,6 +1,6 @@
 /**index.wxss**/
 page{
-  padding: 0 20rpx;
+  padding: 0 20rpx 40px 20rpx;
   box-sizing: border-box;
 }
 .van-search__content{
@@ -17,5 +17,50 @@ page{
 }
 .image{
   width: 100%;
-  
+}
+/* 播放工具栏 */
+.play-bar{
+  width: 100%;
+  height: 44px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -2rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 15rpx;
+  box-sizing: border-box;
+}
+.left{
+  display: flex;
+  align-items: center;
+}
+.left .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-bottom: 30rpx;
+}
+.left .name{
+  margin-left: 10rpx;
+}
+.play-bar .right .icon{
+  width: 65rpx;
+  height: 65rpx;
+}
+
+/* 头像动画 */
+@keyframes albumRotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg)
+  }
+}
+
+.album-anim{
+  animation:albumRotate 10s linear infinite;
 }

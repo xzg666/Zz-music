@@ -11,7 +11,7 @@
 
   <view class="list">
     <block wx:for="{{songsInfo.tracks}}" wx:key="name">
-      <song-item-v2 index="{{index}}" item="{{item}}"></song-item-v2>
+      <song-item-v2 index="{{index}}" item="{{item}}" bindtap="handleSongItemClick" data-index="{{index}}"></song-item-v2>
     </block>
   </view>
 </view>

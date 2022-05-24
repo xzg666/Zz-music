@@ -45,13 +45,21 @@
     </view>
     <view class="operation">
       <image class="btn btn-mode" 
-             src="/assets/images/player/play_order.png"></image>
+             src="/assets/images/player/play_{{playModeName}}.png"
+             bindtap="handleModeBtnClick"
+             ></image>
       <image class="btn btn-prev" 
-             src="/assets/images/player/play_prev.png"></image>
+             src="/assets/images/player/play_prev.png"
+             bindtap="handlePreBtnClick"
+             ></image>
       <image class="btn btn-pause" 
-             src="/assets/images/player/play_pause.png"></image>
+             src="/assets/images/player/play_{{playingName}}.png"
+             bindtap="handlePlayBtnClick"
+             ></image>
       <image class="btn btn-next" 
-             src="/assets/images/player/play_next.png"></image>
+             src="/assets/images/player/play_next.png"
+             bindtap="handleNextBtnClick"
+             ></image>
       <image class="btn btn-music" src="/assets/images/player/play_music.png"></image>
     </view>
   </swiper-item>
