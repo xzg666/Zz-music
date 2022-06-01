@@ -1,6 +1,7 @@
 // pages/detail-search/index.js
 import {hotSearch,getSearchSuggest,getSearchResult} from '../../service/api_search'
 import debounce from '../../utils/debounce'
+import {playStore} from '../../store/index'
 
 const getSearchSuggestDebounce  = debounce(getSearchSuggest,300)
 
@@ -39,7 +40,7 @@ Page({
     }
 
     getSearchSuggestDebounce(searchValue).then(res=>{
-      console.log(123,res.result.allMatch)
+      // console.log(123,res.result.allMatch)
       //1.获取关键字所匹配到的歌曲信息
       this.setData({allMatch:res.result.allMatch})
 
@@ -127,5 +128,10 @@ Page({
   //   this.handleSearchAction()
 
   // }
+  handleSongItemClick(event){
+    const index = event.currentTarget.dataset.index
+    playStore.setState('playListSongs',this.data.resSongs)
+    playStore.setState('playListIndex',index)
+  },
   
 })

@@ -29,7 +29,7 @@
       <view class="arname">{{songsInfo.ar[0].name}}</view>
       <view class="alia">专辑：{{songsInfo.alia[0]||'暂无~'}}</view>
     </view>
-    <view class="lyric" wx:if="{{deviceRadio >2}}">{{currentLyric}}</view>
+    <view class="lyric" wx:if="{{deviceRadio >2}}">{{currentLyric.length?currentLyric:'暂无歌词'}}</view>
     <view class="progress">
       <slider 
         class="slider" 

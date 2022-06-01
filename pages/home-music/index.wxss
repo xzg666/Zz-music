@@ -32,6 +32,7 @@ page{
   justify-content: space-between;
   padding: 10rpx 15rpx;
   box-sizing: border-box;
+  
 }
 .left{
   display: flex;
